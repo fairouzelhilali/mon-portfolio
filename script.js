@@ -4,22 +4,22 @@ const defaultProjects = [
     id: 1,
     title: "Build a JavaScript Calculator",
     tags: ["HTML5", "CSS3", "JS", "React.js"],
-    desc: "Une calculatrice web interactive développée avec React pour freeCodeCamp, qui gère les opérations enchaînées, respecte les priorités mathématiques et empêche les erreurs de saisie.",
-    img: "https://imgur.com/omjjCaX.png" 
+    desc: "Une calculatrice web interactive développée avec React pour freeCodeCamp...",
+    img: "https://i.imgur.com/vHAnW0W.png" // Lien direct corrigé
   },
   {
     id: 2,
     title: "Random Quote Machine",
     tags: ["HTML5", "CSS3", "JS", "React", "Bootstrap", "FontAwesome"],
-    desc: "Une application web interactive développée avec React pour freeCodeCamp, qui génère des citations aléatoires à la demande et permet de les partager instantanément sur Twitter (X).",
-    img: "https://imgur.com/rdiKjyq.png"
+    desc: "Une application web interactive développée avec React pour freeCodeCamp...",
+    img: "https://i.imgur.com/bbnVxtT.png" // Ajout de i. et .png
   },
   {
     id: 3,
     title: "Build a Drum Machine",
     tags: ["HTML5", "CSS3", "JS", "React", "Bootstrap", "Babel"],
-    desc: "Une boîte à rythmes virtuelle développée avec React pour freeCodeCamp, qui déclenche des sons de percussion au clic ou au clavier et affiche le nom du son joué en temps réel.",
-    img: "https://imgur.com/r35DD3Q.png"
+    desc: "Une boîte à rythmes virtuelle développée avec React pour freeCodeCamp...",
+    img: "https://i.imgur.com/r35DD3Q.png" // Ajout de i. et .png
   }
 ];
 
