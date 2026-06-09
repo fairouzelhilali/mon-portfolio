@@ -5,7 +5,7 @@ const defaultProjects = [
     title: "Build a JavaScript Calculator",
     tags: ["HTML5", "CSS3", "JS", "React.js"],
     desc: "Une calculatrice web interactive développée avec React pour freeCodeCamp...",
-    img: "https://i.imgur.com/r35DD3Q.png",
+    img: "https://i.imgur.com/bwrjpTW.png",
     link: "https://fairouzelhilali.github.io/Build-a-JavaScript-Calculator/" 
   },
   {
@@ -13,7 +13,7 @@ const defaultProjects = [
     title: "Random Quote Machine",
     tags: ["HTML5", "CSS3", "JS", "React", "Bootstrap", "FontAwesome"],
     desc: "Une application web interactive développée avec React pour freeCodeCamp...",
-    img: "https://i.imgur.com/r35DD3Q.png",
+    img: "https://i.imgur.com/zRoNKhY.png",
     link: "https://fairouzelhilali.github.io/Build-a-Random-Quote-Machine/" 
   },
   {
