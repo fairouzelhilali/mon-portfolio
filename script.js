@@ -5,7 +5,7 @@ const defaultProjects = [
     title: "Build a JavaScript Calculator",
     tags: ["HTML5", "CSS3", "JS", "React.js"],
     desc: "Une calculatrice web interactive développée avec React pour freeCodeCamp...",
-    img: "https://i.imgur.com/zRoNKhY.png",
+    img: "https://i.imgur.com/jICMpqt.png",
     link: "https://fairouzelhilali.github.io/Build-a-JavaScript-Calculator/" 
   },
   {
