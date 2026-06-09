@@ -1,5 +1,4 @@
 // --- JEU DE DONNÉES INITIALES (Mock Data) ---
-// Ajout des liens correspondants à chaque projet
 const defaultProjects = [
   {
     id: 1,
@@ -7,7 +6,7 @@ const defaultProjects = [
     tags: ["HTML5", "CSS3", "JS", "React.js"],
     desc: "Une calculatrice web interactive développée avec React pour freeCodeCamp...",
     img: "https://i.imgur.com/r35DD3Q.png",
-    link: "https://fairouzelhilali.github.io/Build-a-JavaScript-Calculator/" // Lien ajouté
+    link: "https://fairouzelhilali.github.io/Build-a-JavaScript-Calculator/" 
   },
   {
     id: 2,
@@ -15,7 +14,7 @@ const defaultProjects = [
     tags: ["HTML5", "CSS3", "JS", "React", "Bootstrap", "FontAwesome"],
     desc: "Une application web interactive développée avec React pour freeCodeCamp...",
     img: "https://i.imgur.com/r35DD3Q.png",
-    link: "https://fairouzelhilali.github.io/Build-a-Random-Quote-Machine/" // Lien ajouté
+    link: "https://fairouzelhilali.github.io/Build-a-Random-Quote-Machine/" 
   },
   {
     id: 3,
@@ -23,11 +22,15 @@ const defaultProjects = [
     tags: ["HTML5", "CSS3", "JS", "React", "Bootstrap", "Babel"],
     desc: "Une boîte à rythmes virtuelle développée avec React pour freeCodeCamp...",
     img: "https://i.imgur.com/r35DD3Q.png",
-    link: "https://fairouzelhilali.github.io/Build-a-Drum-Machine/" // Lien ajouté
+    link: "https://fairouzelhilali.github.io/Build-a-Drum-Machine/" 
   }
 ];
 
-// Initialisation du LocalStorage
+// 🔴 NETTOYAGE AUTOMATIQUE (À supprimer après le premier rechargement de page)
+// Cette ligne va forcer le navigateur à oublier l'ancienne version sans liens.
+localStorage.removeItem('portfolio_projects'); 
+
+// Initialisation du LocalStorage avec les nouvelles données contenant les liens
 if (!localStorage.getItem('portfolio_projects')) {
   localStorage.setItem('portfolio_projects', JSON.stringify(defaultProjects));
 }
@@ -51,8 +54,7 @@ function renderPortfolio() {
     projects.forEach(project => {
       const tagsHTML = project.tags.map(t => `<span class="tag">${t.trim()}</span>`).join('');
       
-      // La carte entière devient un lien cliquable grâce à la balise <a> 
-      // target="_blank" ouvre dans un nouvel onglet, rel="" assure la sécurité
+      // Utilisation du lien dynamique (project.link)
       projectsGrid.innerHTML += `
         <a href="${project.link || '#'}" target="_blank" rel="noopener noreferrer" class="project-link-wrapper">
           <div class="project-card" id="proj-${project.id}">
@@ -137,7 +139,6 @@ if (addProjectForm) {
     e.preventDefault();
     const projects = JSON.parse(localStorage.getItem('portfolio_projects')) || [];
     
-    // Récupération de la valeur d'un champ lien s'il existe dans votre HTML modal (ex: id="projLink")
     const linkInput = document.getElementById('projLink');
 
     const newProject = {
@@ -146,7 +147,7 @@ if (addProjectForm) {
       tags: document.getElementById('projTech').value.split(','),
       desc: document.getElementById('projDesc').value,
       img: document.getElementById('projImg').value,
-      link: linkInput ? linkInput.value : "#" // Sauvegarde le lien dynamique s'il existe
+      link: linkInput ? linkInput.value : "#" 
     };
 
     projects.push(newProject);
