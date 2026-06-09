@@ -1,25 +1,29 @@
 // --- JEU DE DONNÉES INITIALES (Mock Data) ---
+// Ajout des liens correspondants à chaque projet
 const defaultProjects = [
   {
     id: 1,
     title: "Build a JavaScript Calculator",
     tags: ["HTML5", "CSS3", "JS", "React.js"],
     desc: "Une calculatrice web interactive développée avec React pour freeCodeCamp...",
-    img: "https://i.imgur.com/r35DD3Q.png" // Lien direct corrigé
+    img: "https://i.imgur.com/r35DD3Q.png",
+    link: "https://fairouzelhilali.github.io/Build-a-JavaScript-Calculator/" // Lien ajouté
   },
   {
     id: 2,
     title: "Random Quote Machine",
     tags: ["HTML5", "CSS3", "JS", "React", "Bootstrap", "FontAwesome"],
     desc: "Une application web interactive développée avec React pour freeCodeCamp...",
-    img: "https://i.imgur.com/r35DD3Q.png" // Ajout de i. et .png
+    img: "https://i.imgur.com/r35DD3Q.png",
+    link: "https://fairouzelhilali.github.io/Build-a-Random-Quote-Machine/" // Lien ajouté
   },
   {
     id: 3,
     title: "Build a Drum Machine",
     tags: ["HTML5", "CSS3", "JS", "React", "Bootstrap", "Babel"],
     desc: "Une boîte à rythmes virtuelle développée avec React pour freeCodeCamp...",
-    img: "https://i.imgur.com/r35DD3Q.png" // Ajout de i. et .png
+    img: "https://i.imgur.com/r35DD3Q.png",
+    link: "https://fairouzelhilali.github.io/Build-a-Drum-Machine/" // Lien ajouté
   }
 ];
 
@@ -39,7 +43,6 @@ const closeModal = document.querySelector('.close-modal');
 function renderPortfolio() {
   const projects = JSON.parse(localStorage.getItem('portfolio_projects'));
   
-  // Si le tableau est vide ou supprimé par mégarde
   if (!projects) return;
 
   // 1. Affichage Galerie Publique
@@ -47,17 +50,22 @@ function renderPortfolio() {
     projectsGrid.innerHTML = '';
     projects.forEach(project => {
       const tagsHTML = project.tags.map(t => `<span class="tag">${t.trim()}</span>`).join('');
+      
+      // La carte entière devient un lien cliquable grâce à la balise <a> 
+      // target="_blank" ouvre dans un nouvel onglet, rel="" assure la sécurité
       projectsGrid.innerHTML += `
-        <div class="project-card" id="proj-${project.id}">
-          <div class="project-img">
-            <img src="${project.img || 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600'}" alt="${project.title}">
+        <a href="${project.link || '#'}" target="_blank" rel="noopener noreferrer" class="project-link-wrapper">
+          <div class="project-card" id="proj-${project.id}">
+            <div class="project-img">
+              <img src="${project.img || 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600'}" alt="${project.title}">
+            </div>
+            <div class="project-info">
+              <div class="project-tags">${tagsHTML}</div>
+              <h3>${project.title}</h3>
+              <p>${project.desc}</p>
+            </div>
           </div>
-          <div class="project-info">
-            <div class="project-tags">${tagsHTML}</div>
-            <h3>${project.title}</h3>
-            <p>${project.desc}</p>
-          </div>
-        </div>
+        </a>
       `;
     });
   }
@@ -79,7 +87,6 @@ function renderPortfolio() {
 // --- FENÊTRE MODALE CONTROLE ---
 if (adminBtn) {
   adminBtn.addEventListener('click', () => {
-    // Pré-remplir les inputs du profil avec les valeurs actuelles du DOM
     if (document.getElementById('profileName')) document.getElementById('inputName').value = document.getElementById('profileName').innerText;
     if (document.getElementById('profileTitle')) document.getElementById('inputTitle').value = document.getElementById('profileTitle').innerText;
     if (document.getElementById('profileBio')) document.getElementById('inputBio').value = document.getElementById('profileBio').innerText;
@@ -103,7 +110,6 @@ function switchTab(tabId) {
   
   document.getElementById(tabId).classList.add('active');
   
-  // Utilisation sécurisée de l'événement natif de la fonction
   if (window.event) {
     window.event.currentTarget.classList.add('active');
   }
@@ -131,12 +137,16 @@ if (addProjectForm) {
     e.preventDefault();
     const projects = JSON.parse(localStorage.getItem('portfolio_projects')) || [];
     
+    // Récupération de la valeur d'un champ lien s'il existe dans votre HTML modal (ex: id="projLink")
+    const linkInput = document.getElementById('projLink');
+
     const newProject = {
-      id: Date.now(), // Génère un ID unique basé sur l'horodatage
+      id: Date.now(), 
       title: document.getElementById('projTitle').value,
       tags: document.getElementById('projTech').value.split(','),
       desc: document.getElementById('projDesc').value,
-      img: document.getElementById('projImg').value
+      img: document.getElementById('projImg').value,
+      link: linkInput ? linkInput.value : "#" // Sauvegarde le lien dynamique s'il existe
     };
 
     projects.push(newProject);
@@ -162,7 +172,6 @@ function deleteProject(id) {
 const skillCards = document.querySelectorAll('.skill-card');
 
 skillCards.forEach(card => {
-  // Ajout d'une transition CSS fluide directement via JS
   card.style.transition = 'transform 0.3s ease';
 
   card.addEventListener('mouseenter', () => {
