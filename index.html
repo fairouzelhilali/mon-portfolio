@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairouz El Hilali | Portfolio Développeuse Full-Stack</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Fairouz<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects"><i class="fas fa-briefcase"></i> Projets</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><button id="adminBtn" class="btn-admin"><i class="fas fa-user-shield"></i> Admin</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="section main-hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h5>Bienvenue sur mon portfolio</h5>
+                <h1 id="profileName">Fairouz El Hilali</h1>
+                <p id="profileTitle" class="subtitle">Développeuse Full-Stack Web</p>
+                <p id="profileBio" class="bio">Développeuse Full Stack passionnée par la création d'applications web modernes et performantes. Je maîtrise le développement Front-End et Back-End ainsi que les bases de données et les API.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1-IMrUwl-qqY9DtpX31UR_P6bSMnIC6jr" target="_blank" class="btn btn-secondary">📄 Mon CV</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="blob-image">
+                    <img src="https://i.imgur.com/BXfeouk.jpeg" alt="Profile">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <h2>Mes Compétences</h2>
+
+        <div class="skills-category">
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                <span>HTML5</span>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                <span>CSS3</span>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                <span>JavaScript</span>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                <span>React</span>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                <span>Bootstrap</span>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                <span>Node.js</span>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js">
+                <span>Express.js</span>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                <span>PHP</span>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                <span>MongoDB</span>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                <span>MySQL</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mes <span>Projets</span></h2>
+                <p>Découvrez mes dernières réalisations techniques</p>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                </div>
+        </div>
+    </section>
+
+    <section id="contact-form-section" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Me <span>Contacter</span></h2>
+                <p>Un projet ? Une opportunité ? Discutons-en !</p>
+            </div>
+            <div class="contact-wrapper">
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message envoyé avec succès ! (Simulation)');">
+                    <div class="form-group">
+                        <input type="text" placeholder="Votre Nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Votre Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Votre Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Réseaux & Contact</h2>
+        <div class="contact-links">
+            <a href="https://github.com/fairouzelhilali" target="_blank" class="contact-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/fairouz-e-9a57a1252" target="_blank" class="contact-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                <span>LinkedIn</span>
+            </a>
+            <a href="mailto:fairouzelhilali@gmail.com" class="contact-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+                <span>Email</span>
+            </a>
+        </div>
+    </section>
+
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-sliders-h"></i> Dashboard Admin</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="tab-menu">
+                    <button class="tab-btn active" onclick="switchTab('profile-tab')">Infos Profil</button>
+                    <button class="tab-btn" onclick="switchTab('projects-tab')">Gestion Projets</button>
+                </div>
+
+                <div id="profile-tab" class="tab-content active">
+                    <h4>Mettre à jour le profil</h4>
+                    <form id="editProfileForm">
+                        <div class="form-group">
+                            <label for="inputName">Nom Complet</label>
+                            <input type="text" id="inputName">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">Titre Professionnel</label>
+                            <input type="text" id="inputTitle">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputBio">Biographie</label>
+                            <textarea id="inputBio" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sauvegarder le profil</button>
+                    </form>
+                </div>
+
+                <div id="projects-tab" class="tab-content">
+                    <h4>Ajouter un projet</h4>
+                    <form id="addProjectForm">
+                        <div class="form-group">
+                            <label for="projTitle">Titre du Projet</label>
+                            <input type="text" id="projTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projTech">Technologies (séparées par des virgules)</label>
+                            <input type="text" id="projTech" placeholder="React, Node.js, MongoDB" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projDesc">Description</label>
+                            <textarea id="projDesc" rows="2" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="projImg">URL de l'image (Laissez vide pour une image par défaut)</label>
+                            <input type="url" id="projImg" placeholder="https://...">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ajouter au Portfolio</button>
+                    </form>
+
+                    <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+                    <h4>Projets Actuels</h4>
+                    <ul class="admin-project-list" id="adminProjectList">
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
