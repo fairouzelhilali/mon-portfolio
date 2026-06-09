@@ -452,3 +452,8 @@ body {
     font-size: 18px;
     font-weight: 600;
 }
+.project-link-wrapper {
+  text-decoration: none;
+  color: inherit; /* Conserve les couleurs de texte initiales */
+  display: block; /* Permet au lien de prendre toute la taille de la carte */
+}
